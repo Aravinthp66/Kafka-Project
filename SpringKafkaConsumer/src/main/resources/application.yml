@@ -1,0 +1,18 @@
+spring:
+ application:
+   name: SpringKafkaConsumer
+server:
+ port: 8082
+ 
+ kafka:
+       # Kafka broker address
+     consumer:
+       bootstrap-servers: localhost:9092
+       group-id: my-group                # Consumer group ID
+       auto-offset-reset: earliest       # Start reading from earliest offset if no offset is present
+       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+       #value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+       #enable-auto-commit: false         # Disable auto commit to handle offset manually
+       #properties:
+         #spring.json.trusted.packages: '*'

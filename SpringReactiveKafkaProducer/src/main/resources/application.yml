@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: SpringReactiveKafkaProducer
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #retries: 3                        # Number of retry attempts for failed sends
+      #batch-size: 16384                 # Batch size for messages
+
+      #linger-ms: 1                      # Delay for batching messages
+      #buffer-memory: 33554432           # Total buffer memory for producer
+      #template:
+      #default-topic: my-default-topic   # Default topic for KafkaTemplate
+      #listener:
+      #ack-mode: manual                  # Manual acknowledgment mode
+ 
+ # Additional configurations
+#kafka:
+  #topics:
+  #topic1: my-first-topic
+  #topic2: my-second-topic
+server:
+  port: 8081
+
